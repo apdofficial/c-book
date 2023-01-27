@@ -1,9 +1,17 @@
 include(CTest)
 
-add_executable(test_book)
-target_sources(test_book PRIVATE test_book.c)
-target_link_libraries(test_book PRIVATE book)
-target_compile_features(test_book PRIVATE c_std_11)
-target_compile_options(test_book PRIVATE -Wall -Wextra -Werror -Wno-deprecated)
+macro(add_test_file NAME)
+    add_executable(${NAME})
+    target_sources(${NAME} PRIVATE ${NAME}.c)
+    set_target_properties(${NAME} PROPERTIES COMPILE_OPTIONS "-Wno-unused")
+    target_include_directories(${NAME} PRIVATE ${CMAKE_CURRENT_LIST_DIR})
+    target_link_libraries(${NAME} PRIVATE book)
+    target_compile_features(${NAME} PRIVATE c_std_11 cxx_std_11)
+    target_compile_options(${NAME} PRIVATE -Wall -Wextra -Werror -Wno-deprecated)
+    add_test(${NAME} ${NAME})
+endmacro(add_test_file)
 
-add_test(test_book test_book)
+add_test_file(test_ch2)
+
+
+
