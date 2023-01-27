@@ -12,6 +12,7 @@ macro(add_test_file NAME)
 endmacro(add_test_file)
 
 add_test_file(test_ch2)
+add_test_file(test_ch3)
 
 
 
