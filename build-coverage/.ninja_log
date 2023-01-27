@@ -1,5 +1,0 @@
-# ninja log v5
-0	58	1674822676648759071	src/CMakeFiles/book.dir/book.c.o	5be0530e9a3b4b6b
-1	60	1674822676648787655	tests/CMakeFiles/test_book.dir/test_book.c.o	9a3014834779e841
-58	83	1674822676676249000	src/libbook.a	ff52d5601121bb32
-83	130	1674822676722004164	tests/test_book	88f747eaf4b34835
