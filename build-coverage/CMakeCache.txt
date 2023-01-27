@@ -158,10 +158,10 @@ CMAKE_OSX_DEPLOYMENT_TARGET:STRING=
 CMAKE_OSX_SYSROOT:PATH=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk
 
 //Value Computed by CMake
-CMAKE_PROJECT_DESCRIPTION:STATIC='My code notes to the '
+CMAKE_PROJECT_DESCRIPTION:STATIC=My code notes for the book Effective C by Robert C. Seacord
 
 //Value Computed by CMake
-CMAKE_PROJECT_HOMEPAGE_URL:STATIC=https://github.com/trolando/sylvan
+CMAKE_PROJECT_HOMEPAGE_URL:STATIC=https://github.com/apdofficial/c-book
 
 //Value Computed by CMake
 CMAKE_PROJECT_NAME:STATIC=cbook

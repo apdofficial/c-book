@@ -4,8 +4,8 @@ cmake_minimum_required(VERSION 3.14)
 
 project(cbook
     VERSION 0.1
-    DESCRIPTION "My code notes to the "
-    HOMEPAGE_URL "https://github.com/trolando/sylvan"
+    DESCRIPTION "My code notes for the book Effective C by Robert C. Seacord"
+    HOMEPAGE_URL "https://github.com/apdofficial/c-book"
     LANGUAGES C CXX
 )
 
