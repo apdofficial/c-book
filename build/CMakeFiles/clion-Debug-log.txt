@@ -1,4 +1,0 @@
-"/Users/andrejpistek/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8214.51/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=/Users/andrejpistek/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8214.51/CLion.app/Contents/bin/ninja/mac/ninja" -DCBOOK_BUILD_TESTS:BOOL=ON -DBUILD_TESTING:BOOL=ON -DCMAKE_COLOR_DIAGNOSTICS:BOOL=ON -DCBOOK_BUILD_EXAMPLES:BOOL=ON -G Ninja -S /Users/andrejpistek/Developer/GitHub/c-book -B /Users/andrejpistek/Developer/GitHub/c-book/build
--- Configuring done
--- Generating done
--- Build files have been written to: /Users/andrejpistek/Developer/GitHub/c-book/build

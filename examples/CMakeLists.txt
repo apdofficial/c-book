@@ -11,5 +11,5 @@ macro(add_example NAME SOURCE)
     set_compilation_settings(${NAME})
 endmacro(add_example)
 
-add_example(ch1 ch1.c)
+add_example(ch2 ch2.c)
 
