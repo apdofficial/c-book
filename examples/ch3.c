@@ -1,6 +1,7 @@
 #include <limits.h>
 #include "book.h"
 #include "stdlib.h"
+#include <stdint.h>
 
 int main()
 {
