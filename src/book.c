@@ -41,4 +41,14 @@ int invoke_function(int index) {
     return FUNCTION_INVOKE_SUCCESS;
 }
 
+void print_binary(int n, int len)
+{
+    int k = 0;
+    uint8_t binary[len];
 
+    for (unsigned i = (1 << (len - 1)); i > 0; i = i / 2)
+        binary[k++] = (n & i) ? '1' : '0';
+
+    binary[len-1] = '\0';
+    printf("The binary representation of %d is \t %s\n", n, binary);
+}
