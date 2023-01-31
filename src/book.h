@@ -30,6 +30,7 @@ void print_binary(int n, int len);
 
 int increment_by_one(int val);
 
-void invoke_func_and_print(int (*func)(int),int value);
+// void invoke_func_and_print(int (*func)(void)) is an equivalent definition
+void invoke_func_and_print(int func(int), int value);
 
 #endif
