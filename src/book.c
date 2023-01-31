@@ -44,11 +44,20 @@ int invoke_function(int index) {
 void print_binary(int n, int len)
 {
     int k = 0;
-    uint8_t binary[len];
+    char binary[len];
 
     for (unsigned i = (1 << (len - 1)); i > 0; i = i / 2)
         binary[k++] = (n & i) ? '1' : '0';
 
     binary[len-1] = '\0';
     printf("The binary representation of %d is \t %s\n", n, binary);
+}
+
+int cast_value(signed long value) {
+    if ((value < SCHAR_MIN) || (value > SCHAR_MAX)) {
+        return ERANGE;
+    }
+    signed char sc = (signed char) value; // Cast quiets warning
+    printf("%c", sc);
+    return 0;
 }

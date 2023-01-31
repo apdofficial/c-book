@@ -1,6 +1,7 @@
 #include <limits.h>
 #include "book.h"
 #include "stdlib.h"
+#include <stdint.h>
 
 int main()
 {
@@ -25,6 +26,10 @@ int main()
     signed int si = -25;
     signed int abs_si = Abs(si); // abs_si = ((si) < 0 ? -(si) : (si))
     printf("%d\n", abs_si); // prints 25
+
+    int err = cast_value(123456);
+    if (err == ERANGE)
+        return EXIT_FAILURE;
 
     return EXIT_SUCCESS;
 }

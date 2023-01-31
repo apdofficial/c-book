@@ -16,13 +16,7 @@
  * Safe conversion
  * Check the rage of the type into which you are going to cast the given data type.
  */
-errno_t do_stuff(signed long value) {
-    if ((value < SCHAR_MIN) || (value > SCHAR_MAX)) {
-        return ERANGE;
-    }
-    signed char sc = (signed char) value; // Cast quiets warning
-    return 0;
-}
+int cast_value(signed long value);
 
 void my_swap(size_t *a, size_t *b);
 
