@@ -53,7 +53,7 @@ void print_binary(int n, int len)
     printf("The binary representation of %d is \t %s\n", n, binary);
 }
 
-errno_t cast_value(signed long value) {
+int cast_value(signed long value) {
     if ((value < SCHAR_MIN) || (value > SCHAR_MAX)) {
         return ERANGE;
     }
