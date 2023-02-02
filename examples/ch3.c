@@ -2,7 +2,12 @@
 #include "book.h"
 #include "stdlib.h"
 #include <stdint.h>
+#include <sys/errno.h>
 
+/**
+ * Chapter 3
+ * Arithmetic types
+ */
 int main()
 {
     unsigned int ui = UINT_MAX;  // 4,294,967,295 on x86

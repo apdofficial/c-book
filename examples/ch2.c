@@ -1,6 +1,11 @@
 #include "book.h"
 #include "stdlib.h"
 
+
+/**
+ * Chapter 2
+ * Objects, Functions, and Types
+ */
 int main(void){
     size_t a = 0;
     size_t b = 1;
