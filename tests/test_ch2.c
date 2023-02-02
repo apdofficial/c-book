@@ -47,6 +47,7 @@ int main(){
     printf("Testing function pointers.\n");
     if (test_functions_p()) return 1;
     printf("Testing counter.\n");
+    if (test_counter()) return 1;
 
     return res;
 }
