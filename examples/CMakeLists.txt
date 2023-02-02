@@ -13,4 +13,5 @@ endmacro(add_example)
 
 add_example(ch2 ch2.c)
 add_example(ch3 ch3.c)
+add_example(ch4 ch4.c)
 
