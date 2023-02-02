@@ -5,10 +5,12 @@
 #include <limits.h>
 
 
+#define mLen 6
+
+
 // static storage
 static int glob = 0;
 static unsigned int counter = 0;
-const static int mLen = 2;
 static int m[mLen] = {1, 2};
 
 
