@@ -17,7 +17,7 @@
  * Safe conversion
  * Check the rage of the type into which you are going to cast the given data type.
  */
-int cast_value(signed long value);
+int can_cast_to_char(signed long value);
 
 void my_swap(size_t *a, size_t *b);
 
@@ -32,7 +32,7 @@ void print_binary(int n, int len);
 int increment_by_one(int val);
 
 // void invoke_func_and_print(int (*func)(void)) is an equivalent definition
-void invoke_func_and_print(int func(int), int value);
+int invoke_func_and_print(int func(int), int value);
 
 int f(void);
 

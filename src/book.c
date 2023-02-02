@@ -1,14 +1,13 @@
 #include <stdio.h>
 #include "book.h"
-
-#include <errno.h>
 #include <limits.h>
+
+#define mLen 6
 
 
 // static storage
 static int glob = 0;
 static unsigned int counter = 0;
-const static int mLen = 2;
 static int m[mLen] = {1, 2};
 
 
@@ -60,21 +59,21 @@ void print_binary(int n, int len){
     printf("\n");
 }
 
-int cast_value(signed long value) {
+int can_cast_to_char(signed long value) {
     if ((value < SCHAR_MIN) || (value > SCHAR_MAX)) {
-        return ERANGE;
+        return 0;
     }
-    signed char sc = (signed char) value; // Cast quiets warning
-    printf("%c", sc);
-    return 0;
+    return 1;
 }
 
 int increment_by_one(int val) {
     return val + 1;
 }
 
-void invoke_func_and_print(int func(int), int value) {
-    printf("%d\n", func(value));
+int invoke_func_and_print(int func(int), int value) {
+    int res = func(value);
+    printf("%d\n", res);
+    return res;
 }
 
 int f(void) {

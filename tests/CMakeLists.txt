@@ -13,6 +13,7 @@ endmacro(add_test_file)
 
 add_test_file(test_ch2)
 add_test_file(test_ch3)
+add_test_file(test_ch4)
 
 
 

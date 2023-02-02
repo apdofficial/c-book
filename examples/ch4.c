@@ -60,10 +60,6 @@ int main() {
     int uc_neg = ~uc; // 0xFFFFFF00,  unary complement
     printf("~uc=%X\n", uc_neg);
 
-    static_assert(alignof(max_align_t) == 8, "Alignment of max_align_t");
-    assert(alignof(max_align_t) == 8); // runtime assertion
-    printf("Alignment of max_align_t = %zu\n", alignof(max_align_t));
-
     int arr[100];
     int *arrp1 = &arr[40];
     int *arrp2 = arrp1 + 20;      // arrp2 points to arr[60]

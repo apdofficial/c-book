@@ -1,11 +1,9 @@
 #include "stdio.h"
 #include "stdlib.h"
-
 #include "test_assert.h"
 #include "book.h"
 
-int test_swap(void)
-{
+int test_swap(void){
     size_t a = 1;
     size_t b = 2;
 
@@ -17,7 +15,6 @@ int test_swap(void)
 }
 
 int test_counter(void){
-
     test_assert(retrieve() == 0);
     for (int i = 0; i < 5; ++i) {
         increment();
@@ -39,11 +36,15 @@ int test_functions_p(void){
     return EXIT_SUCCESS;
 }
 
-int main()
-{
-    test_swap();
-    test_functions_p();
-    test_counter();
+int main(){
+    int res = EXIT_SUCCESS;
 
-    return EXIT_SUCCESS;
+    printf("Testing test_swap.\n");
+    if (test_swap()) return 1;
+    printf("Testing test_functions_p.\n");
+    if (test_functions_p()) return 1;
+    printf("Testing test_counter.\n");
+    if (test_counter()) return 1;
+
+    return res;
 }
