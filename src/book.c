@@ -60,13 +60,11 @@ void print_binary(int n, int len){
     printf("\n");
 }
 
-int cast_value(signed long value) {
+int can_cast_to_char(signed long value) {
     if ((value < SCHAR_MIN) || (value > SCHAR_MAX)) {
-        return ERANGE;
+        return 0;
     }
-    signed char sc = (signed char) value; // Cast quiets warning
-    printf("%c", sc);
-    return 0;
+    return 1;
 }
 
 int increment_by_one(int val) {

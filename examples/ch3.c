@@ -32,8 +32,8 @@ int main()
     signed int abs_si = Abs(si); // abs_si = ((si) < 0 ? -(si) : (si))
     printf("%d\n", abs_si); // prints 25
 
-    int err = cast_value(123456);
-    if (err == ERANGE)
+    int can_cast = can_cast_to_char(254);
+    if (!can_cast)
         return EXIT_FAILURE;
 
     return EXIT_SUCCESS;

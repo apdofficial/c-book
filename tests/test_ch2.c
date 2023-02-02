@@ -39,11 +39,14 @@ int test_functions_p(void){
     return EXIT_SUCCESS;
 }
 
-int main()
-{
-    test_swap();
-    test_functions_p();
-    test_counter();
+int main(){
+    int res = EXIT_SUCCESS;
 
-    return EXIT_SUCCESS;
+    printf("Testing swap.\n");
+    if (test_swap()) return 1;
+    printf("Testing function pointers.\n");
+    if (test_functions_p()) return 1;
+    printf("Testing counter.\n");
+
+    return res;
 }

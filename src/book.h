@@ -17,7 +17,7 @@
  * Safe conversion
  * Check the rage of the type into which you are going to cast the given data type.
  */
-int cast_value(signed long value);
+int can_cast_to_char(signed long value);
 
 void my_swap(size_t *a, size_t *b);
 
