@@ -71,8 +71,10 @@ int increment_by_one(int val) {
     return val + 1;
 }
 
-void invoke_func_and_print(int func(int), int value) {
-    printf("%d\n", func(value));
+int invoke_func_and_print(int func(int), int value) {
+    int res = func(value);
+    printf("%d\n", res);
+    return res;
 }
 
 int f(void) {
