@@ -1,9 +1,6 @@
 #include <stdio.h>
 #include "book.h"
-
-#include <errno.h>
 #include <limits.h>
-
 
 #define mLen 6
 
