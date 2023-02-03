@@ -50,4 +50,8 @@ int get_m_len(void);
 
 int* get_m_ptr(void);
 
+void *book_memset(void *dest, int val, size_t n);
+
+void *book_memcopy(void *dest, void *src, size_t n);
+
 #endif
