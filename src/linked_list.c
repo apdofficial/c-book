@@ -4,7 +4,6 @@
 #include "linked_list.h"
 #include <stdio.h>
 
-
 void ll_delete(linked_list_t **list){
     if ((*list) == NULL) return;
     node_t **head = &(*list)->head;

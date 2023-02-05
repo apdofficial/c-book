@@ -3,6 +3,7 @@
 #include "test_assert.h"
 #include "book.h"
 #include <limits.h>
+#include <stdint.h>
 
 int test_absolute_value(){
     test_assert(absolute_value(-1) == 1);
