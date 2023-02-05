@@ -120,6 +120,15 @@ void *book_memset(void *dest, int val, size_t n) {
     return dest;
 }
 
+
+void *book_memset2(void *dest, int val, size_t n) {
+    unsigned char *ptr = (unsigned char *) dest; // cast to pointer to bytes
+    for (size_t i = 0; i < n; ++i) {
+        ptr[i] = (unsigned char )val;
+    }
+    return dest;
+}
+
 void *book_memcopy(void *dest, void *src, size_t n) {
     // cast to pointer to bytes
     unsigned char *dest_ptr = (unsigned char *) dest;
@@ -127,5 +136,39 @@ void *book_memcopy(void *dest, void *src, size_t n) {
 
     while (n-- > 0)
         *dest_ptr++ = (unsigned char) *src_ptr++;
+
     return dest;
+}
+
+
+int find_element(size_t len, const int arr[len], int key) {
+    size_t pos = (size_t) -1;
+    // traverse arr and search for key
+    for (size_t i = 0; i < len; ++i) {
+        if (arr[i] == key) {
+            pos = i;
+            break; // terminate loop
+        }
+    }
+    return pos;
+}
+
+/**
+ * Suppose we work with 8-bit two's complement,
+ * then integer overflow occurs if INT32_MIN is given as argument.
+ * The reason is that in 8-bit two's complement INT32_MIN == INT32_MAX+1.
+ *  * if (a < 0) {
+ *     return -a;
+ * }
+ *
+ * Example for 1 byte integer value:
+ *  INT8_MIN == -128 (10000000)
+ *  INT8_MAX ==  127 (01111111)
+ * to fix it return long int instead to fir the value
+ */
+long int absolute_value(int a) {
+    if (a < 0) {
+        return -(long int)a;
+    }
+    return a;
 }

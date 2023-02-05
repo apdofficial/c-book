@@ -52,6 +52,12 @@ int* get_m_ptr(void);
 
 void *book_memset(void *dest, int val, size_t n);
 
+void *book_memset2(void *dest, int val, size_t n);
+
 void *book_memcopy(void *dest, void *src, size_t n);
+
+int find_element(size_t len, const int arr[len], int key);
+
+long int absolute_value(int a);
 
 #endif
