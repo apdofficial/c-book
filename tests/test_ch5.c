@@ -9,7 +9,7 @@ int test_absolute_value(){
     test_assert(absolute_value(-1) == 1);
     test_assert(absolute_value(0) == 0);
     test_assert(absolute_value(1) == 1);
-    test_assert(absolute_value(INT32_MAX) == (long)INT32_MIN-1);
+    test_assert(absolute_value(INT32_MAX) == INT32_MAX);
     test_assert(absolute_value(INT32_MIN) == (long)INT32_MAX + 1);
 
     return EXIT_SUCCESS;
