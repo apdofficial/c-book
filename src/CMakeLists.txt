@@ -3,7 +3,9 @@ add_library(book STATIC)
 target_sources(book
    PRIVATE
         book.c
+        linked_list.c
    PUBLIC
+        linked_list.h
         book.h
 )
 
