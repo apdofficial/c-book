@@ -37,14 +37,12 @@ int test_functions_p(void){
 }
 
 int main(){
-    int res = EXIT_SUCCESS;
-
     printf("Testing test_swap.\n");
-    if (test_swap()) return 1;
+    if (test_swap()) return EXIT_FAILURE;
     printf("Testing test_functions_p.\n");
-    if (test_functions_p()) return 1;
+    if (test_functions_p()) return EXIT_FAILURE;
     printf("Testing test_counter.\n");
-    if (test_counter()) return 1;
+    if (test_counter()) return EXIT_FAILURE;
 
-    return res;
+    return EXIT_SUCCESS;
 }

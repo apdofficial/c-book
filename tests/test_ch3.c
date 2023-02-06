@@ -27,12 +27,10 @@ int test_cast_to_char(){
 }
 
 int main(){
-    int res = EXIT_SUCCESS;
-
     printf("Testing test_abs.\n");
-    if (test_abs()) return 1;
+    if (test_abs()) return EXIT_FAILURE;
     printf("Testing test_cast_to_char.\n");
-    if (test_cast_to_char()) return 1;
+    if (test_cast_to_char()) return EXIT_FAILURE;
 
-    return res;
+    return EXIT_SUCCESS;
 }
