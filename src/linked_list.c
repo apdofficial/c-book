@@ -4,15 +4,6 @@
 #include "linked_list.h"
 #include <stdio.h>
 
-<<<<<<< Updated upstream
-void ll_delete(linked_list_t **list){
-    if ((*list) == NULL) return;
-    node_t **head = &(*list)->head;
-    while ((*head) != NULL){
-        node_t **tmp = head;
-        *head = (*head)->next;
-        free(*tmp);
-=======
 
 void ll_delete(LinkedList *list){
     if (list == NULL) return;
@@ -21,7 +12,6 @@ void ll_delete(LinkedList *list){
         Node *tmp = head;
         head = head->next;
         free(tmp);
->>>>>>> Stashed changes
     }
 }
 
