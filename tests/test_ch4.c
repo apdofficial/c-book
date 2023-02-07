@@ -46,16 +46,14 @@ int test_invoke(){
 }
 
 int main(){
-    int res = EXIT_SUCCESS;
-
     printf("Testing test_max.\n");
-    if (test_max()) return 1;
+    if (test_max()) return EXIT_FAILURE;
     printf("Testing test_sum_m.\n");
-    if (test_sum_m()) return 1;
+    if (test_sum_m()) return EXIT_FAILURE;
     printf("Testing test_increment.\n");
-    if (test_increment()) return 1;
+    if (test_increment()) return EXIT_FAILURE;
     printf("Testing test_invoke.\n");
-    if (test_invoke()) return 1;
+    if (test_invoke()) return EXIT_FAILURE;
 
-    return res;
+    return EXIT_SUCCESS;
 }

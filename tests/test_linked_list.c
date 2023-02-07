@@ -54,10 +54,8 @@ int test_ll(){
 }
 
 int main(){
-    int res = EXIT_SUCCESS;
-
     printf("Testing test_ll.\n");
-    if (test_ll()) return 1;
+    if (test_ll()) return EXIT_FAILURE;
 
-    return res;
+    return EXIT_SUCCESS;
 }

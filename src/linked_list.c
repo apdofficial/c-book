@@ -8,7 +8,6 @@
 void ll_delete(linked_list_t **list){
     if ((*list) == NULL) return;
     node_t **head = &(*list)->head;
-
     while ((*head) != NULL){
         node_t **tmp = head;
         *head = (*head)->next;
