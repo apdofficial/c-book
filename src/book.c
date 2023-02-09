@@ -172,3 +172,32 @@ long int absolute_value(int a) {
     }
     return a;
 }
+
+/**
+ * Flexible array member dynamic allocation.
+ * @param array_size
+ * @return
+ */
+widget *malloc_widget(size_t array_size) {
+    widget *p = (widget *) malloc(sizeof(widget) + sizeof(int) * array_size);
+    if (p == NULL) {
+        return NULL;
+    }
+    p->num = array_size;
+    for (size_t i = 0; i < p->num; ++i) {
+        p->data[i] = 17;
+    }
+    return p;
+}
+
+// no memory is copied for the matrix even though the VLA signature is used
+// the matrix is converted to a pointer to the first element in the matrix
+// the user of the function is responsible to provide allocated memory for the matrix with
+// correct number of rows and columns
+int matrix_sum(size_t rows, size_t cols, int matrix[rows][cols]) {
+    int total = 0;
+    for (size_t r = 0; r < rows; r++)
+        for (size_t c = 0; c < cols; c++)
+            total += matrix[r][c];
+    return total;
+}

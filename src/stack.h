@@ -23,8 +23,8 @@ typedef enum{
 } StackResizeStrategyType;
 
 struct StackItem {
-    char *data;
     int size;
+    char *data;
 };
 
 typedef struct StackItem StackItem;

@@ -18,9 +18,9 @@
  */
 
 struct Node {
-  char *data;
-  int size;
   struct Node *next;
+  int size;
+  char *data;
 };
 
 typedef struct Node Node;
