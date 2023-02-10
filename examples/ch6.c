@@ -20,15 +20,6 @@ int main() {
     * In GCC you cna use -Wvla-larger-than=size to detect stack frame overflow.
     */
 
-    size_t size = 12;
-    printf("%zu\n", size); // prints 12
-    (void) sizeof(int[size++]);
-    printf("%zu\n", size); // prints 13
-    typedef int foo[size++];
-    printf("%zu\n", size); // prints 14
-    foo a;
-    printf("%d\n", a[0]);
-
     int rows = 2;
     int columns = 2;
     int matrix[rows][columns]; // VLA can not be initialized because the size is not known at the compile time.
