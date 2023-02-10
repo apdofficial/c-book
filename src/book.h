@@ -17,12 +17,11 @@
  * See malloc_widget function.
  */
 typedef struct {
-    size_t num;
+    size_t size;
     int data[];
 } widget;
 
 widget *malloc_widget(size_t array_size);
-
 
 /**
  * Safe conversion

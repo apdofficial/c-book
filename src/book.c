@@ -171,6 +171,7 @@ long int absolute_value(int a) {
         return -(long int)a;
     }
     return a;
+
 }
 
 /**
@@ -183,13 +184,15 @@ widget *malloc_widget(size_t array_size) {
     if (p == NULL) {
         return NULL;
     }
-    p->num = array_size;
+
+    p->size = array_size;
     for (size_t i = 0; i < p->num; ++i) {
         p->data[i] = 17;
     }
     return p;
 }
 
+// Variable Length Array
 // no memory is copied for the matrix even though the VLA signature is used
 // the matrix is converted to a pointer to the first element in the matrix
 // the user of the function is responsible to provide allocated memory for the matrix with
