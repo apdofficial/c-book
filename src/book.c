@@ -186,7 +186,7 @@ widget *malloc_widget(size_t array_size) {
     }
 
     p->size = array_size;
-    for (size_t i = 0; i < p->num; ++i) {
+    for (size_t i = 0; i < p->size; ++i) {
         p->data[i] = 17;
     }
     return p;

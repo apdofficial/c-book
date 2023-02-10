@@ -1,5 +1,6 @@
 #include "stack.h"
 #include <string.h>
+#include <assert.h>
 
 Stack *stack_create(StackResizeStrategyType resizeStrategy, int size) {
     if (resizeStrategy == STACK_RESIZE_STRATEGY_FIXED && size < 1){
@@ -34,6 +35,9 @@ StackItem *stack_create_item(char *data, int size){
 
 bool double_stack_memory(Stack *stack){
     size_t new_size = stack->size * 2;
+    if (new_size == 0) new_size = 1;
+    assert(new_size != 0);
+    if (stack->size == 0)  assert(new_size == stack->size + 1);
     printf("Automatically resizing the stack from %lu to %zu items\n", stack->size, new_size);
     StackItem *new_items = (StackItem *) malloc(sizeof (StackItem) * (new_size));
     if (new_items == NULL){
