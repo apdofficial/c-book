@@ -11,6 +11,20 @@
 #define Abs(i) ((i) < 0 ? -(i) : (i))
 #define AbsM(i, flag) ((i) >= 0 ? (i) : ((i)==(flag) ? (flag) : -(i))) //avoid signed integer overflows
 
+<<<<<<< Updated upstream
+=======
+/**
+ * Starting from C99, last member of struct can have incomplete array type.
+ * We cna  allocate size of the array when allocation dynamic memotry for the struct.
+ * See malloc_widget function.
+ */
+typedef struct {
+    size_t size;
+    int data[];
+} widget;
+
+widget *malloc_widget(size_t array_size);
+>>>>>>> Stashed changes
 
 
 /**
