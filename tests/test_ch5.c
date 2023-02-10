@@ -60,13 +60,13 @@ int main(){
     printf("int is %lu bytes, and %lu bits\n", sizeof(int), CHAR_BIT * sizeof (int));
 
     printf("Testing test_absolute_value.\n");
-    if (test_absolute_value()) return 1;
+    if (test_absolute_value()) return EXIT_FAILURE;
     printf("Testing test_memset.\n");
-    if (test_memset()) return 1;
+    if (test_memset()) return EXIT_FAILURE;
     printf("Testing test_memcopy.\n");
-    if (test_memcopy()) return 1;
+    if (test_memcopy()) return EXIT_FAILURE;
     printf("Testing test_find_element.\n");
-    if (test_find_element()) return 1;
+    if (test_find_element()) return EXIT_FAILURE;
 
     return EXIT_SUCCESS;
 }

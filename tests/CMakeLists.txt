@@ -15,7 +15,10 @@ add_test_file(test_ch2)
 add_test_file(test_ch3)
 add_test_file(test_ch4)
 add_test_file(test_ch5)
+add_test_file(test_ch6)
 add_test_file(test_linked_list)
+add_test_file(test_stack)
+
 
 
 
