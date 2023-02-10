@@ -6,14 +6,25 @@
 #include <stdbool.h>
 
 
+/**
+ * Stack.
+ *
+ * Time Complexity:
+ *  Insert/ Delete: O(1)
+ *  Peek: O(n)
+ *
+ * Space Complexity:
+ *  Space: O(n)
+ */
+
 typedef enum{
     STACK_RESIZE_STRATEGY_FIXED,
     STACK_RESIZE_STRATEGY_AUTO,
 } StackResizeStrategyType;
 
 struct StackItem {
-    char *data;
     int size;
+    char *data;
 };
 
 typedef struct StackItem StackItem;

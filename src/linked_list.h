@@ -3,31 +3,49 @@
 
 #include <stdbool.h>
 
-typedef struct node {
-  int data;
-  struct node *next;
-} node_t;
+/**
+ * Linked list.
+ *
+ * Time Complexity:
+ *  Insert/ Delete:
+ *               Start:  O(1)
+ *               Middle: Peek time + O(1)
+ *               End:    O(1), known end element/ O(n), unknown end element
+ *  Peek: O(n)
+ *
+ * Space Complexity:
+ *  Space: O(n)
+ */
 
-typedef struct linked_list {
-  struct node *head;
-} linked_list_t;
+struct Node {
+  struct Node *next;
+  int size;
+  char *data;
+};
 
-void ll_delete(linked_list_t **list);
+typedef struct Node Node;
 
-linked_list_t *ll_create_linked_list();
+struct LinkedList {
+  struct Node *head;
+};
 
-node_t *ll_create_node();
+typedef struct LinkedList LinkedList;
 
-void ll_print(linked_list_t *list);
 
-node_t *ll_get_tail(linked_list_t * list);
+void ll_delete(LinkedList *list);
 
-bool ll_push(linked_list_t *list, int value);
+LinkedList *ll_create_linked_list();
 
-int ll_pop(linked_list_t **list);
+Node *ll_create_node(char *data, int size);
 
-int ll_size(linked_list_t *list);
+void ll_print(LinkedList *list);
 
-bool ll_is_empty(linked_list_t *list);
+bool ll_push(LinkedList *head, char *data, int size);
+
+Node *ll_pop(LinkedList *list);
+
+int ll_num_items(LinkedList *list);
+
+bool ll_is_empty(LinkedList *list);
 
 #endif //CBOOK_LINKED_LIST_H

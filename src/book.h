@@ -11,8 +11,6 @@
 #define Abs(i) ((i) < 0 ? -(i) : (i))
 #define AbsM(i, flag) ((i) >= 0 ? (i) : ((i)==(flag) ? (flag) : -(i))) //avoid signed integer overflows
 
-<<<<<<< Updated upstream
-=======
 /**
  * Starting from C99, last member of struct can have incomplete array type.
  * We cna  allocate size of the array when allocation dynamic memotry for the struct.
@@ -24,8 +22,6 @@ typedef struct {
 } widget;
 
 widget *malloc_widget(size_t array_size);
->>>>>>> Stashed changes
-
 
 /**
  * Safe conversion
@@ -73,5 +69,7 @@ void *book_memcopy(void *dest, void *src, size_t n);
 int find_element(size_t len, const int arr[len], int key);
 
 long int absolute_value(int a);
+
+int matrix_sum(size_t rows, size_t cols, int matrix[rows][cols]);
 
 #endif

@@ -171,8 +171,7 @@ long int absolute_value(int a) {
         return -(long int)a;
     }
     return a;
-<<<<<<< Updated upstream
-=======
+
 }
 
 /**
@@ -185,8 +184,9 @@ widget *malloc_widget(size_t array_size) {
     if (p == NULL) {
         return NULL;
     }
+
     p->size = array_size;
-    for (size_t i = 0; i < p->size; ++i) {
+    for (size_t i = 0; i < p->num; ++i) {
         p->data[i] = 17;
     }
     return p;
@@ -203,5 +203,4 @@ int matrix_sum(size_t rows, size_t cols, int matrix[rows][cols]) {
         for (size_t c = 0; c < cols; c++)
             total += matrix[r][c];
     return total;
->>>>>>> Stashed changes
 }
