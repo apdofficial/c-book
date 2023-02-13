@@ -1,7 +1,3 @@
-//
-// Created by Andrej Pistek on 13/02/2023.
-//
-
 #ifndef CBOOK_QUEUE_H
 #define CBOOK_QUEUE_H
 
@@ -31,31 +27,31 @@ typedef struct Queue Queue;
  * @param item
  * @return
  */
-bool enqueue(Item *item);
+bool queue_enqueue(Queue *queue, Item *item);
 
 /**
  * Remove an element from the front of the queue
  * @return
  */
-Item *dequeue();
+Item *queue_dequeue(Queue *queue);
 
 /**
  * Check if the queue is empty
  * @return
  */
-bool is_empty();
+bool queue_is_empty(Queue *queue);
 
 /**
  * Check if the queue is full
  * @return
  */
-bool is_full();
+bool queue_is_full(Queue *queue);
 
 /**
  * Get the value of the front of the queue without removing it
  * @return
  */
-Item *peek();
+Item *queue_peek(Queue *queue);
 
 
 #endif //CBOOK_QUEUE_H
