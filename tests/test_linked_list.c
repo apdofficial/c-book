@@ -1,7 +1,7 @@
 #include "stdio.h"
 #include "stdlib.h"
 #include "test_assert.h"
-#include "../src/linked_list.h"
+#include "linked_list.h"
 
 int test_ll(){
     char data1[2] = {0x41, 0x42}; // { A, B }

@@ -13,7 +13,7 @@
 
 /**
  * Starting from C99, last member of struct can have incomplete array type.
- * We cna  allocate size of the array when allocation dynamic memotry for the struct.
+ * We cna  allocate size of the array when allocation dynamic memory for the struct.
  * See malloc_widget function.
  */
 typedef struct {

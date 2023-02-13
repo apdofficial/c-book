@@ -9,25 +9,32 @@
  *
  * Time Complexity:
  *  Insert/ Delete: O(1)
- *  Peek: O(n)
+ *  Peek:
  *
  * Space Complexity:
- *  Space: O(n)
+ *  Space:
  */
 struct Queue {
+    int front;
+    int rear;
     unsigned long size;
-    Item *items;
-    int top;
+    Item items[];
 };
 
 typedef struct Queue Queue;
+
+/**
+ * Create Queue.
+ * @return
+ */
+Queue *queue_create(size_t size);
 
 /**
  * Add an element to the end of the queue
  * @param item
  * @return
  */
-bool queue_enqueue(Queue *queue, Item *item);
+bool queue_enqueue(Queue *queue, Item item);
 
 /**
  * Remove an element from the front of the queue

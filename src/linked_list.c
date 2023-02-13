@@ -71,7 +71,7 @@ void ll_print(LinkedList *list) {
 }
 
 LinkedList *ll_create_linked_list() {
-    LinkedList *list = malloc(sizeof (LinkedList));
+    LinkedList *list = (LinkedList *) malloc(sizeof (LinkedList));
     list->head = NULL;
     return list;
 }

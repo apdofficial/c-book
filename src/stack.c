@@ -8,7 +8,7 @@ Stack *stack_create(StackResizeStrategyType resizeStrategy, int size) {
         return NULL;
     }
 
-    Stack *stack = (Stack *) malloc( sizeof (Stack));
+    Stack *stack = (Stack *) malloc( sizeof (Stack) * size);
     if (stack == NULL){
         printf("Failed to create new Stack.\n");
         return NULL;
@@ -16,21 +16,9 @@ Stack *stack_create(StackResizeStrategyType resizeStrategy, int size) {
 
     stack->top = -1;
     stack->size = size;
-    stack->items = NULL;
     stack->resizeStrategy = resizeStrategy;
 
     return stack;
-}
-
-Item *stack_create_item(char *data, int size){
-    Item *item = (Item *) malloc(sizeof (Item));
-    if (item == NULL){
-        printf("Failed to create new Stack.\n");
-        return NULL;
-    }
-    item->size = size;
-    item->data = data;
-    return item;
 }
 
 bool double_stack_memory(Stack *stack){
@@ -69,7 +57,7 @@ bool stack_push(Stack *stack, char *data, int size) {
         }
     }
 
-    Item *item = stack_create_item(data, size);
+    Item *item = item_create(data, size);
     if (item == NULL) {
         return false;
     }
@@ -93,7 +81,7 @@ Item *stack_pop(Stack *stack) {
         return NULL;
     }
     Item item = stack->items[stack->top];
-    Item *item_p = stack_create_item(item.data, item.size);
+    Item *item_p = item_create(item.data, item.size);
     stack->top--;
     return item_p;
 }

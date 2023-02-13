@@ -25,10 +25,10 @@ typedef enum{
 
 
 struct Stack {
-    unsigned long size;
-    Item *items;
     int top;
     StackResizeStrategyType resizeStrategy;
+    unsigned long size;
+    Item *items;
 };
 
 typedef struct Stack Stack;
