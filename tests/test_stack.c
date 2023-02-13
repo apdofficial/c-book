@@ -16,7 +16,7 @@ int test_stack_auto() {
     test_assert(stack_push(auto_stack, data, 2));
     test_assert(stack_push(auto_stack, data, 2));
 
-    StackItem *item2 = stack_peek(auto_stack);
+    Item *item2 = stack_peek(auto_stack);
     for (int i = 0; i < item2->size; ++i) {
         test_assert(item2->data[i] == data[i]);
     }
@@ -24,7 +24,7 @@ int test_stack_auto() {
     test_assert(stack_push(auto_stack, data, 2));
     test_assert(stack_push(auto_stack, data2, 2));
 
-    StackItem *item4 = stack_peek(auto_stack);
+    Item *item4 = stack_peek(auto_stack);
     for (int i = 0; i < item4->size; ++i) {
         test_assert(item4->data[i] == data2[i]);
     }
@@ -58,7 +58,7 @@ int test_stack_fixed() {
     test_assert(stack_push(fixed_stack, data, 2));
     test_assert(stack_push(fixed_stack, data, 2));
 
-    StackItem *item2 = stack_peek(fixed_stack);
+    Item *item2 = stack_peek(fixed_stack);
     for (int i = 0; i < item2->size; ++i) {
         test_assert(item2->data[i] == data[i]);
     }
@@ -66,7 +66,7 @@ int test_stack_fixed() {
     test_assert(stack_push(fixed_stack, data2, 2));
     test_assert(stack_push(fixed_stack, data, 2) == false);
 
-    StackItem *item3 = stack_peek(fixed_stack);
+    Item *item3 = stack_peek(fixed_stack);
     for (int i = 0; i < item3->size; ++i) {
         test_assert(item3->data[i] == data2[i]);
     }

@@ -5,7 +5,7 @@ macro(add_test_file NAME)
     target_sources(${NAME} PRIVATE ${NAME}.c)
     set_target_properties(${NAME} PROPERTIES COMPILE_OPTIONS "-Wno-unused")
     target_include_directories(${NAME} PRIVATE ${CMAKE_CURRENT_LIST_DIR})
-    target_link_libraries(${NAME} PRIVATE book )
+    target_link_libraries(${NAME} PRIVATE book)
     target_compile_features(${NAME} PRIVATE c_std_11 cxx_std_11)
     target_compile_options(${NAME} PRIVATE -Wall -Wextra -Werror -Wno-deprecated)
     add_test(${NAME} ${NAME})
@@ -16,8 +16,11 @@ add_test_file(test_ch3)
 add_test_file(test_ch4)
 add_test_file(test_ch5)
 add_test_file(test_ch6)
+
 add_test_file(test_linked_list)
 add_test_file(test_stack)
+add_test_file(test_queue)
+
 
 
 

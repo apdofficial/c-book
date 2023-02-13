@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include "item.h"
 
 
 /**
@@ -22,16 +23,10 @@ typedef enum{
     STACK_RESIZE_STRATEGY_AUTO,
 } StackResizeStrategyType;
 
-struct StackItem {
-    int size;
-    char *data;
-};
-
-typedef struct StackItem StackItem;
 
 struct Stack {
     unsigned long size;
-    StackItem *items;
+    Item *items;
     int top;
     StackResizeStrategyType resizeStrategy;
 };
@@ -48,20 +43,43 @@ Stack *stack_create(StackResizeStrategyType resizeStrategy, int size);
 /**
  * Create stack that can automatically resize.
  */
-#define stack_create_auto()         stack_create(STACK_RESIZE_STRATEGY_AUTO, 0)
+#define stack_create_auto()        stack_create(STACK_RESIZE_STRATEGY_AUTO, 0)
 
-//Push:     Add an item to the top of a stack
+/**
+ * Add an item to the top of a stack
+ * @param stack
+ * @param data
+ * @param size
+ * @return
+ */
 bool stack_push(Stack *stack, char *data, int size);
 
-//Pop:      Remove an item from the top of a stack
-StackItem *stack_pop(Stack *stack);
+/**
+ * Remove an item from the top of a stack
+ * @param stack
+ * @return
+ */
+Item *stack_pop(Stack *stack);
 
-//IsEmpty:  Check if the stack is empty
+/**
+ * Check if the stack is empty
+ * @param stack
+ * @return
+ */
 bool stack_is_empty(Stack * stack);
 
-//Peek:     Get the value of the top item without removing it
-StackItem *stack_peek(Stack * stack);
+/**
+ * Get the value of the top item without removing it
+ * @param stack
+ * @return
+ */
+Item *stack_peek(Stack * stack);
 
+/**
+ * Get number of item in a given stack.
+ * @param stack
+ * @return
+ */
 int stack_num_items(Stack *stack);
 
 #endif //CBOOK_STACK_H

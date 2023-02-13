@@ -22,8 +22,8 @@ Stack *stack_create(StackResizeStrategyType resizeStrategy, int size) {
     return stack;
 }
 
-StackItem *stack_create_item(char *data, int size){
-    StackItem *item = (StackItem *) malloc( sizeof (StackItem));
+Item *stack_create_item(char *data, int size){
+    Item *item = (Item *) malloc(sizeof (Item));
     if (item == NULL){
         printf("Failed to create new Stack.\n");
         return NULL;
@@ -39,7 +39,7 @@ bool double_stack_memory(Stack *stack){
     assert(new_size != 0);
     if (stack->size == 0)  assert(new_size == stack->size + 1);
     printf("Automatically resizing the stack from %lu to %zu items\n", stack->size, new_size);
-    StackItem *new_items = (StackItem *) malloc(sizeof (StackItem) * (new_size));
+    Item *new_items = (Item *) malloc(sizeof (Item) * (new_size));
     if (new_items == NULL){
         printf("Failed to resize given Stack.\n");
         return false;
@@ -69,7 +69,7 @@ bool stack_push(Stack *stack, char *data, int size) {
         }
     }
 
-    StackItem *item = stack_create_item(data, size);
+    Item *item = stack_create_item(data, size);
     if (item == NULL) {
         return false;
     }
@@ -85,15 +85,15 @@ bool stack_push(Stack *stack, char *data, int size) {
     return true;
 }
 
-StackItem *stack_pop(Stack *stack) {
+Item *stack_pop(Stack *stack) {
     // TODO instead of allocation heap memory, return struct with error enum anv value
     //  we use dynamic memory to indicate error with a NULL pointer
     if (stack_is_empty(stack)){
-        printf("Failed to pop StackItem. Stack is empty.\n");
+        printf("Failed to pop Item. Stack is empty.\n");
         return NULL;
     }
-    StackItem item = stack->items[stack->top];
-    StackItem *item_p = stack_create_item(item.data, item.size);
+    Item item = stack->items[stack->top];
+    Item *item_p = stack_create_item(item.data, item.size);
     stack->top--;
     return item_p;
 }
@@ -103,11 +103,11 @@ bool stack_is_empty(Stack *stack) {
 }
 
 
-StackItem *stack_peek(Stack *stack) {
+Item *stack_peek(Stack *stack) {
     // TODO instead of allocation heap memory, return struct with error enum anv value
     //  we use dynamic memory to indicate error with a NULL pointer
     if (stack_is_empty(stack)){
-        printf("Failed to peak StackItem. Stack is empty.\n");
+        printf("Failed to peak Item. Stack is empty.\n");
         return NULL;
     }
     return &stack->items[stack->top];

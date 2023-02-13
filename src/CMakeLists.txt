@@ -5,10 +5,12 @@ target_sources(book
         book.c
         linked_list.c
         stack.c
+        queue.c
    PUBLIC
         book.h
         linked_list.h
         stack.h
+        queue.h
 )
 
 set_target_properties(book PROPERTIES VERSION ${book_VERSION} SOVERSION ${book_VERSION_MAJOR})
